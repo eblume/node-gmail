@@ -22,7 +22,7 @@ Coming soon - it should follow the standard `npm` routines, but I am new to `npm
 
 === Testing
 
-The testing suite for this library is a bit more complicated to set up then one would normally want, due to the fact that any tests that don't connect to a live GMail account are rather fragile.
+The testing suite for this library is a bit more complicated to set up then one would normally want, due to the fact that any tests that don't connect to a live GMail account are rather fragile. The following steps should make it easier, but unfortunately they are likely to break for people other than me at first. Input on this is welcome.
 
 In order to set up the testing environment, first create (or have) a Google Mail (GMail.com) mail account. Then create a `test/test_settings.json` file in the format perscribed by `test/test_settings.json.example`.
 
