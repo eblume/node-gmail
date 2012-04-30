@@ -1,36 +1,25 @@
 var gmail = require('../lib/gmail.js'),
     vows = require('vows'),
-    assert = require('assert');
+    assert = require('assert'),
+    fs = require('fs');
 
 
 
-vows.describe('Testing Environment').addBatch({
-    'Arithmetic tests': {
-      'when dividing a number by zero': {
-        topic: function () { return 42 / 0 },
+vows.describe('Validate the Testing Environment') .addBatch({
+  'The test settings file (test/test_settings.json)': {
+    topic: 'test/test_settings.json',
 
-        'we get Infinity': function (topic) {
-            assert.equal (topic, Infinity);
-        }
-      },
-      'when dividing zero by zero': {
-        topic: function () { return 0 / 0 },
-
-        'we get a value which': {
-            'is not a number': function (topic) {
-                assert.isNaN (topic);
-            },
-            'is not equal to itself': function (topic) {
-                assert.notEqual (topic, topic);
-            }
-        }
-      }
+    'exists' : function (file) {
+      assert.doesNotThrow(function() {
+        fs.statSync(file);
+      })
     },
-    'Module exports': {
-      topic: gmail.gmail_test_variable,
-      'are working as expected': function (result) {
-        assert.equal(result,3);
-      }
+    'has the fields': {
+      topic: function(file) {return JSON.parse(fs.readFileSync(file)) },
+
+      'email': function(settings) {assert.ok(settings.email); },
+      'password': function(settings) {assert.ok(settings.password); }
     }
+  }
 }).export(module)
 
