@@ -3,3 +3,7 @@
 # Node-specific things
 node_modules/*
 npm-debug.log
+
+
+# Don't include the test_settings.json file, it contains passwords!
+test/test_settings.json

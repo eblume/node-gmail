@@ -13,7 +13,8 @@
   }],
   "dependencies": {
     "imap": "0.3.x",
-    "mailparser": "0.2.x"
+    "mailparser": "0.2.x",
+    "async": "0.1.x"
   },
   "devDependencies": {
     "vows": "0.6.x"
