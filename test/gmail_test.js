@@ -18,5 +18,21 @@ describe('A GMailInterface object',function() {
       });
     });
   });
-  it('Can iterate over all emails'); // Pending - get above first.
+  it('can retrieve an email.',function(done) {
+    this.timeout(10000);
+    var fetcher = gm.apply_all();
+    fetcher.once('fetched',function(message) {
+      message.should.have.property('id');
+      message.should.have.property('thread');
+      message.should.have.property('date');
+      message.should.have.property('labels');
+      message.should.have.property('eml');
+      done();
+    })
+  });
+  /*
+  after(function(done){
+    gm.logout(done);
+  });
+  */
 });
