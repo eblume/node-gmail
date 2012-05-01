@@ -17,9 +17,11 @@
     "async": "0.1.x"
   },
   "devDependencies": {
-    "vows": "0.6.x"
+    "mocha": "1.0.x",
+    "should": "0.6.x"
   },
   "scripts": {
-    "test": "vows test/*.js --spec"
+    "test": "mocha",
+    "guard": "mocha -G -w"
   }
 }

@@ -1,25 +1,32 @@
 var gmail = require('../lib/gmail.js'),
-    vows = require('vows'),
-    assert = require('assert'),
+    should = require('should'),
     fs = require('fs');
 
 
-
-vows.describe('Validate the Testing Environment') .addBatch({
-  'The test settings file (test/test_settings.json)': {
-    topic: 'test/test_settings.json',
-
-    'exists' : function (file) {
-      assert.doesNotThrow(function() {
-        fs.statSync(file);
-      })
-    },
-    'has the fields': {
-      topic: function(file) {return JSON.parse(fs.readFileSync(file)) },
-
-      'email': function(settings) {assert.ok(settings.email); },
-      'password': function(settings) {assert.ok(settings.password); }
-    }
-  }
-}).export(module)
+describe('The ./test/test_settings.json file', function() {
+  var file = './test/test_settings.json';
+  it('should exist',function(cb) {
+    fs.stat(file,function(err,data) {
+      should.not.exist(err);
+      data.should.be.ok;
+      cb();
+    });
+  });
+  describe('contents', function() {
+    var settings;
+    before(function(cb) {
+      fs.readFile(file,function(err,data) {
+        should.not.exist(err);
+        settings = JSON.parse(data);
+        cb();
+      });
+    });
+    it('should have an "email" field', function() {
+      settings.should.have.property('email');
+    });
+    it('should have a "password" field', function() {
+      settings.should.have.property('password');
+    })
+  });
+});
 
