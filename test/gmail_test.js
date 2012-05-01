@@ -11,7 +11,7 @@ describe('A GMailInterface object',function() {
       var settings;
       should.not.exist(err);
       settings = JSON.parse(data);
-      gm = Object.create(gmail.GMailInterface);
+      gm = new gmail.GMailInterface();
       gm.connect(settings.email,settings.password,function(err){
         should.not.exist(err);
         done();
