@@ -1,6 +1,7 @@
 gmail.js
 ========
 *Convenient asynchronous read-only interface to GMail*
+**IMPORTANT: This is a work in progress and will not function properly.**
 
 by Erich Blume <blume.erich@gmail.com>
 
