@@ -1,19 +1,22 @@
 {
   "name": "gmail",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Erich Blume <blume.erich@gmail.com>",
   "description": "An API for fetching mail from GMail.com",
   "main": "./lib/gmail.js",
-  "engines": { "node" : "0.6.x" },
+  "engine": { "node" : "0.6.x" },
   "keywords": ["imap","gmail","google","email","backup"],
   "maintainers": [{
     "name": "Erich Blume",
     "email": "blume.erich@gmail.com",
     "web": "github.com/eblume"
   }],
+  "repository": {
+    "type":"git",
+    "url":"https://eblume@github.com/eblume/node-gmail.git"
+  },
   "dependencies": {
     "imap": "0.3.x",
-    "mailparser": "0.2.x",
     "async": "0.1.x"
   },
   "devDependencies": {
@@ -24,4 +27,5 @@
     "test": "mocha",
     "guard": "mocha -G -w"
   }
+  "license": "MIT",
 }
