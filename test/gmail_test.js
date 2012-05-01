@@ -30,9 +30,7 @@ describe('A GMailInterface object',function() {
       done();
     })
   });
-  /*
   after(function(done){
     gm.logout(done);
   });
-  */
 });
