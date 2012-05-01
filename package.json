@@ -1,6 +1,6 @@
 {
   "name": "gmail",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "Erich Blume <blume.erich@gmail.com>",
   "description": "An API for fetching mail from GMail.com",
   "main": "./lib/gmail.js",
@@ -26,6 +26,6 @@
   "scripts": {
     "test": "mocha",
     "guard": "mocha -G -w"
-  }
-  "license": "MIT",
+  },
+  "license": "MIT"
 }
