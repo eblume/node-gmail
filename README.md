@@ -1,5 +1,5 @@
- gmail.js
- ========
+gmail.js
+========
 *Convenient asynchronous read-only interface to GMail*
 
 by Erich Blume <blume.erich@gmail.com>
