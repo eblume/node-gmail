@@ -1,9 +1,11 @@
-== gmail.js
+ gmail.js
+ ========
 *Convenient asynchronous read-only interface to GMail*
 
 by Erich Blume <blume.erich@gmail.com>
 
-=== License
+License
+-------
 
 This work is published under the following terms, commonly referred to as the
 "MIT License", an OSI-certified open-source permissive license.
@@ -16,11 +18,13 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-=== Installation
+Installation
+------------
 
 Coming soon - it should follow the standard `npm` routines, but I am new to `npm` and may have made mistakes.
 
-=== Testing
+Testing
+-------
 
 The testing suite for this library is a bit more complicated to set up then one would normally want, due to the fact that any tests that don't connect to a live GMail account are rather fragile. The following steps should make it easier, but unfortunately they are likely to break for people other than me at first. Input on this is welcome.
 
