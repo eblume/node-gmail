@@ -36,3 +36,8 @@ In order to set up the testing environment, first create (or have) a Google Mail
 Next, make sure you have a at least one recieved email. Additionally you need emails that (and these CAN be all just one email) have at least one attachment, and have at least one GMail label.
 
 Once this is done, run `npm install` to create a module bundle in `./node_modules`, and then run `npm test` to run the test suites. They should all pass - if they do not, please file a bug!
+
+Usage
+-----
+
+For now, check out the `test/` directory for usage examples. The API is extremely unstable right now, please do not rely on it being stable until further notice. As of this writing, the API is also exceedingly limited - it only allows you to asynchronously loop over every single email in your account. I am unlikely to add new functionality until people ask for it, as this is the only functionality I need for an application I am writing. I'll add more when I get to it, or much sooner if you ask for it. (I am likely to drop everything and help you if you ask, because that really excites me!)
