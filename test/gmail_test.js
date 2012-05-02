@@ -25,7 +25,6 @@ describe('A GMailInterface object',function() {
     var times_called = 0;
     fetcher.on('fetched',function(message) {
       times_called += 1;
-      should.strictEqual(1,times_called);
       message.should.have.property('id');
       message.id.should.equal("1262008919301622338");
       message.should.have.property('thread');
@@ -34,6 +33,7 @@ describe('A GMailInterface object',function() {
       message.should.have.property('eml');
     });
     fetcher.on('end',function() {
+      should.strictEqual(1,times_called);
       done();
     }); 
   });
