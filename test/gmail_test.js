@@ -24,6 +24,7 @@ describe('A GMailInterface object',function() {
     var times_fetched = 0;
     fetcher.on('fetching',function(ids) {
       ids.length.should.equal(1);
+      should.strictEqual(0,times_fetched);
     })
     fetcher.on('fetched',function(message) {
       times_fetched += 1;
