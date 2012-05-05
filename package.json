@@ -1,10 +1,10 @@
 {
   "name": "gmail",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "author": "Erich Blume <blume.erich@gmail.com>",
   "description": "An API for fetching mail from GMail.com",
   "main": "./lib/gmail.js",
-  "engine": { "node" : "0.6.x" },
+  "engine": { "node" : ">=0.4.0" },
   "keywords": ["imap","gmail","google","email","backup"],
   "maintainers": [{
     "name": "Erich Blume",
