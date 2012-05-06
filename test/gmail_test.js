@@ -5,7 +5,7 @@ var gmail = require('../lib/gmail.js'),
 
 describe('A GMailInterface object',function() {
   var gm;
-  before(function(done) {
+  beforeEach(function(done) {
     this.timeout(10000); // GMail can be a bit slow to respond
     fs.readFile('./test/test_settings.json',function(err,data) {
       var settings;
@@ -18,11 +18,12 @@ describe('A GMailInterface object',function() {
       });
     });
   });
+
   it('can retrieve an email.',function(done) {
     this.timeout(10000);
     var fetcher = gm.get({id:"1262008919301622338"});
     var times_fetched = 0;
-    fetcher.on('fetching',function(ids) {
+    fetcher.on('fetching',function(ids,cancel) {
       ids.length.should.equal(1);
       should.strictEqual(0,times_fetched);
     })
@@ -40,7 +41,21 @@ describe('A GMailInterface object',function() {
       done();
     }); 
   });
-  after(function(done){
+
+  describe('using filter criteria to fetch emails', function() {
+    it('can retrieve all emails after a certain date',function(done) {
+      var fetcher = gm.get({since:"26-Oct-2011 11:30:12 +0000"});
+      fetcher.on('fetching',function(ids,cancel) {
+        ids.length.should.be.above(100);
+        cancel();
+      });
+      fetcher.on('end',function() {
+        done();
+      })
+    });
+  });
+
+  afterEach(function(done){
     gm.logout(done);
   });
 });
