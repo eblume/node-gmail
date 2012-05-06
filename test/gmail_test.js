@@ -46,7 +46,7 @@ describe('A GMailInterface object',function() {
     it('can retrieve all emails after a certain date',function(done) {
       var fetcher = gm.get({since:"26-Oct-2011 11:30:12 +0000"});
       fetcher.on('fetching',function(ids,cancel) {
-        ids.length.should.be.above(100);
+        ids.length.should.be.above(0);
         cancel();
       });
       fetcher.on('end',function() {
