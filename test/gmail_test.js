@@ -53,6 +53,16 @@ describe('A GMailInterface object',function() {
         done();
       })
     });
+    it('can retrieve all emails after a certain Box ID', function(done) {
+      var fetcher = gm.get({boxid_gt:69428});
+      fetcher.on('fetching',function(ids,cancel) {
+        ids[0].should.be.above(69428);
+        cancel();
+      });
+      fetcher.on('end',function() {
+        done();
+      })
+    });
   });
 
   afterEach(function(done){
