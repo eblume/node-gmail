@@ -35,6 +35,7 @@ describe('A GMailInterface object',function() {
       message.should.have.property('date');
       message.should.have.property('labels');
       message.should.have.property('eml');
+      message.should.have.property('boxid');
     });
     fetcher.on('end',function() {
       should.strictEqual(1,times_fetched);
