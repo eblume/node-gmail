@@ -1,6 +1,6 @@
 {
   "name": "gmail",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "author": "Erich Blume <blume.erich@gmail.com>",
   "description": "An API for fetching mail from GMail.com",
   "main": "./lib/gmail.js",
