@@ -35,7 +35,7 @@ describe('A GMailInterface object',function() {
       message.should.have.property('date');
       message.should.have.property('labels');
       message.should.have.property('eml');
-      message.should.have.property('boxid');
+      message.should.have.property('uid');
     });
     fetcher.on('end',function() {
       should.strictEqual(1,times_fetched);
@@ -54,10 +54,10 @@ describe('A GMailInterface object',function() {
         done();
       })
     });
-    it('can retrieve all emails after a certain Box ID', function(done) {
-      var fetcher = gm.get({boxid_gt:69428});
+    it('can retrieve all emails after a certain UID', function(done) {
+      var fetcher = gm.get({uid_from:69428});
       fetcher.on('fetching',function(ids,cancel) {
-        ids[0].should.be.above(69428);
+        ids[0].should.be.equal('69428');
         cancel();
       });
       fetcher.on('end',function() {
