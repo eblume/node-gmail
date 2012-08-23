@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/eblume/node-gmail.png)](http://travis-ci.org/eblume/node-gmail)
 gmail.js
 ========
 
